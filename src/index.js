@@ -15,3 +15,15 @@ root.render(
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
+
+window.renderBrowse = (containerId, history) => {
+  ReactDOM.render(
+    <App history={history} />,
+    document.getElementById(containerId),
+  );
+  unregister();
+};
+
+window.unmountBrowse = containerId => {
+  ReactDOM.unmountComponentAtNode(document.getElementById(containerId));
+};
