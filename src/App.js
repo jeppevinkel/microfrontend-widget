@@ -1,7 +1,7 @@
 import logo from './logo.svg'
 import React from 'react'
-import { Router } from 'react-router-dom'
-import { createBrowserHistory } from 'history'
+// import { Router } from 'react-router-dom'
+// import { createBrowserHistory } from 'history'
 import Loading from './Loading'
 import styled from 'styled-components'
 
@@ -10,7 +10,7 @@ const MainColumn = styled.div`
   margin: 0 auto;
 `
 
-const defaultHistory = createBrowserHistory();
+// const defaultHistory = createBrowserHistory();
 
 class App extends React.Component {
   constructor(props) {
@@ -23,14 +23,16 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    this.setState({
-      person: {
-        firstName: "Ole",
-        lastName: "Olsen",
-        phoneNumber: "88888888"
-      },
-      loading: false
-    })
+    setTimeout(() => {
+      this.setState({
+        person: {
+          firstName: "Ole",
+          lastName: "Olsen",
+          phoneNumber: "88888888"
+        },
+        loading: false
+      })
+    }, 1000)
   }
 
   render() {
@@ -47,11 +49,11 @@ class App extends React.Component {
     }
 
     return (
-      <Router history={this.props.history || defaultHistory}>
+      // <Router history={this.props.history || defaultHistory}>
         <MainColumn>
           <p>{person.firstName} {person.lastName}: <span>{person.phoneNumber}</span></p>
         </MainColumn>
-      </Router>
+      // </Router>
     )
   }
 }
