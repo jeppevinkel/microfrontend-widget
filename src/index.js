@@ -9,17 +9,17 @@ import reportWebVitals from './reportWebVitals';
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 // reportWebVitals();
 
-window.Widget = {
+window.widget = {
   render: (containerId) => {
-    window.Widget.root = ReactDOM.createRoot(document.getElementById(containerId))
-    window.Widget.root.render(
+    window.widget.root = ReactDOM.createRoot(document.getElementById(containerId))
+    window.widget.root.render(
       <React.StrictMode>
         <App />
       </React.StrictMode>
     );
   },
   unmount: () => {
-    window.Widget.root.unmount()
+    window.widget.root.unmount()
   }
 }
 
